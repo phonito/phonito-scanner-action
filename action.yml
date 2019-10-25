@@ -4,7 +4,11 @@ inputs:
   image:  # image and tag to scan
     description: 'Image and tag of Docker image to scan, e.g. my-app:latest'
     required: true
-  phonito-token:  # image and tag to scan
+  fail-level: 
+    description: 'The minimum severity of a vulnerability that will fail the build. e.g. LOW to fail all builds containing any vulnerability or CRITICAL to only fail on severe vulnerabilities but not MEDIUM ones. options: LOW, MEDIUM, HIGH, CRITICAL'
+    required: true
+    default: HIGH
+  phonito-token:  
     description: 'Token for your Phonito Security account. Get a token from: https://phonito.io/setup-ci'
     required: true
 runs:
