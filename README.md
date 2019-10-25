@@ -1,23 +1,42 @@
-# Hello world docker action
+# Phonito Security Docker Vulnerability Scanner
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+This action automates scanning Docker images for OS & library vulnerabilities. You will need a Phonito Secuirty account which you can get for free at https://phonito.io.
+
+Example output:
+
+```bash
+Phonito Scan Complete!
+==============================================
+4 CVEs present image.
+==============================================
+┌────────────────┬───────────┬──────────┬───────────────────┐
+│ CVE ID         │ Product   │ Severity │ Installed Version │
+├────────────────┼───────────┼──────────┼───────────────────┤
+│ CVE-2016-3189  │ bzip2     │ MEDIUM   │ 1.0.6             │
+├────────────────┼───────────┼──────────┼───────────────────┤
+│ CVE-2017-18018 │ coreutils │ MEDIUM   │ 8.28              │
+├────────────────┼───────────┼──────────┼───────────────────┤
+│ CVE-2016-2781  │ coreutils │ MEDIUM   │ 8.28              │
+├────────────────┼───────────┼──────────┼───────────────────┤
+│ CVE-2005-0758  │ gzip      │ MEDIUM   │ 1.6               │
+└────────────────┴───────────┴──────────┴───────────────────┘
+```
 
 ## Inputs
 
-### `who-to-greet`
+### `image`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The docker image you want to scan for example: "app:latest" or "nodejs:latest"
 
-## Outputs
+### `phonito-token`
 
-### `time`
-
-The time we greeted you.
+**Required** Your api token for Phonito Security. Get it here: https://phonito.io/setup-ci
 
 ## Example usage
 
 ```yaml
-uses: actions/hello-world-docker-action@master
+uses: phonito/phonito-scanner-action@master
 with:
-  who-to-greet: 'Mona the Octocat'
+  image: 'myapp:build-42'
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpX....'
 ```
