@@ -28,6 +28,12 @@ Phonito Scan Complete!
 
 **Required** The docker image you want to scan for example: "app:latest" or "nodejs:latest"
 
+### `fail-level`
+
+**Required** The minimum severity of a vulnerability that will fail the build.
+e.g. `LOW` to fail all builds containing any vulnerability or `CRITICAL` to only fail on severe vulnerabilities but not `MEDIUM` ones.
+options: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`
+
 ### `phonito-token`
 
 **Required** Your api token for Phonito Security. Get it here: https://phonito.io/setup-ci
