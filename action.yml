@@ -1,4 +1,4 @@
-name: 'Phonito Security Docker Scan'
+name: 'Docker Vulnerability Scan With Phonito Security'
 description: 'Scan Docker image for security vulnerabilities'
 inputs:
   image:  # image and tag to scan
