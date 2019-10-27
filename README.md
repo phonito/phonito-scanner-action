@@ -65,6 +65,6 @@ jobs:
         uses: phonito/phonito-scanner-action@master
         with:
           image: myapp:${{ steps.vars.outputs.docker_tag }}
-          phonito-token: 'eyJhbGciOiJIUz......'
+          phonito-token: ${{ secrets.PHONITO_TOKEN }}
 
 ```
