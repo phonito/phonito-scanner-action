@@ -1,6 +1,6 @@
 # Phonito Security Docker Vulnerability Scanner
 
-This action automates scanning Docker images for OS & library vulnerabilities. You will need a Phonito Secuirty account which you can get for free at https://phonito.io.
+This action automates scanning Docker images for OS & library vulnerabilities. You will need a Phonito Security account which you can get for free at https://phonito.io.
 
 Example output:
 
